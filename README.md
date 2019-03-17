@@ -1,0 +1,1 @@
+You are to implement the Depth-First Search (DFS) based algorithm for (i) testing whether or not the input directed graph G is acyclic (a DAG), and (ii) if G is a DAG, topologically sorting the vertices of G and outputting the topologically sorted order.
