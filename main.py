@@ -1,5 +1,7 @@
 from util import *
 
+import os
+
 
 def main():
     print("1. graphin-c1")
@@ -24,17 +26,20 @@ def main():
         file = str(input("Type custom filename:"))
         file = "input/" + file
 
-    graph = Util.read_in_graph(file)
-    back_edges = is_acyclic(graph)
-    if len(back_edges) > 0:
-        print("NOT ACYCLIC!")
-        print("Back Edges: ")
-        print(back_edges)
+    if os.path.isfile(file):
+        graph = Util.read_in_graph(file)
+        back_edges = is_acyclic(graph)
+        if len(back_edges) > 0:
+            print("NOT ACYCLIC!")
+            print("Back Edges: ")
+            print(back_edges)
+        else:
+            print("DIRECT ACYCLIC GRAPH!")
+            sort = topological_sort(graph)
+            print("Topological Sort: ")
+            print(sort)
     else:
-        print("DIRECT ACYCLIC GRAPH!")
-        sort = topological_sort(graph)
-        print("Topological Sort: ")
-        print(sort)
+        print("Path is not a file!")
 
 
 def is_acyclic(graph):
