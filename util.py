@@ -37,6 +37,7 @@ class Util:
             edges = edges.split(' ')
             for k in range(0, len(edges)):
                 graph.graph[vert].append(edges[k])
+
         for x in range(1, vert_count + 1):
             graph.graph[str(x)] = list(filter(None, graph.graph[str(x)]))
 
