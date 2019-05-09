@@ -1,6 +1,6 @@
-from util import *
-
 import os
+
+from util import *
 
 
 def main():
